@@ -3,9 +3,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
-import { Header } from 'antd/lib/layout/layout';
-import Layout from 'antd/lib/layout';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -26,6 +23,7 @@ export default function RootLayout({
 						colorPrimary: '#4c16ff',
 						colorInfo: '#4c16ff',
 						colorTextBase: '#000000da',
+						borderRadius: 8,
 					},
 				}}>
 				<AntdRegistry>

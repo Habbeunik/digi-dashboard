@@ -10,12 +10,8 @@ export default function Header() {
 				<Flex>
 					<Dropdown menu={{ items: [] }}>
 						<Button
-							style={{
-								width: '220px',
-								display: 'flex',
-								alignItems: 'center',
-								justifyContent: 'space-between',
-							}}
+							className="w-72 flex justify-between items-center"
+							style={{ display: 'flex' }}
 							iconPosition="end"
 							icon={<DownOutlined />}
 							size="large">
