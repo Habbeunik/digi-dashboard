@@ -1,3 +1,5 @@
+'use client';
+
 import Header from '@/components/layout/header';
 import {
 	Button,
@@ -8,13 +10,36 @@ import {
 	Row,
 	Col,
 	Card,
+	Spin,
 } from 'antd';
 import Title from 'antd/lib/typography/Title';
 import Summary from '@/components/summary';
 import OverviewChart from '@/components/chart/overview';
 import RecentSales from '@/components/recentSale';
+import { useEffect, useState } from 'react';
+import { IApiData } from '@/types';
 
 export default function Home() {
+	const [data, setData] = useState<IApiData | null>(null);
+
+	const summaryData = data
+		? {
+				revenueSummary: data?.dataSummary.revenue,
+				salesSummary: data?.dataSummary.sales,
+				subscriptionSummary: data?.dataSummary.sub,
+				activeNowSummary: data?.dataSummary.activeUsers,
+		  }
+		: null;
+
+	useEffect(() => {
+		(async () => {
+			const res = await fetch('/api/data');
+			const resData = await res.json();
+
+			setData(resData.data);
+		})();
+	}, []);
+
 	return (
 		<>
 			<Header />
@@ -38,18 +63,27 @@ export default function Home() {
 					options={['Overview', 'Analytics', 'Reports', 'Notification']}
 				/>
 
-				<Summary />
+				<Summary data={summaryData} />
 
 				<Row gutter={16}>
 					<Col span={14}>
 						<Card className="h-full">
-							<OverviewChart />
+							{data ? (
+								<OverviewChart data={data.overViewChartData} />
+							) : (
+								<Flex
+									align="center"
+									justify="center"
+									className="w-full min-h-64">
+									<Spin size="large" />
+								</Flex>
+							)}
 						</Card>
 					</Col>
 
 					<Col span={10}>
 						<Card>
-							<RecentSales />
+							<RecentSales sales={data?.recentTransactions} />
 						</Card>
 					</Col>
 				</Row>

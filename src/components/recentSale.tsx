@@ -1,8 +1,16 @@
 import Title from 'antd/lib/typography/Title';
 import Paragraph from 'antd/lib/typography/Paragraph';
-import { Avatar, Flex, Space } from 'antd';
+import { Avatar, Flex, Skeleton, Space } from 'antd';
+import { IRecentTransaction } from '@/types';
+import { formatMoney } from '@/lib/money';
+import AvatarSkeleton from 'antd/lib/skeleton/Avatar';
 
-export default function RecentSales() {
+interface IRecentSalesProps {
+	sales?: IRecentTransaction[];
+}
+export default function RecentSales(props: IRecentSalesProps) {
+	const { sales } = props;
+
 	return (
 		<div className="h-full">
 			<Title level={3} style={{ marginBottom: 0 }}>
@@ -13,32 +21,69 @@ export default function RecentSales() {
 			</Paragraph>
 
 			<Space className="mt-6 w-full" direction="vertical" size={35}>
-				<SaleItem />
-				<SaleItem />
-				<SaleItem />
-				<SaleItem />
-				<SaleItem />
-				<SaleItem />
+				{sales ? (
+					sales.map((sale) => (
+						<SaleItem
+							key={sale.user.email}
+							name={sale.user.name}
+							email={sale.user.email}
+							pic={sale.user.pic}
+							amount={`+${formatMoney(sale.amount)}`}
+						/>
+					))
+				) : (
+					<>
+						<SaleItemLoading />
+						<SaleItemLoading />
+						<SaleItemLoading />
+						<SaleItemLoading />
+						<SaleItemLoading />
+						<SaleItemLoading />
+					</>
+				)}
 			</Space>
 		</div>
 	);
 }
 
-function SaleItem() {
+interface ISaleItemProps {
+	name: string;
+	email: string;
+	amount: string;
+	pic?: string;
+}
+function SaleItem(props: ISaleItemProps) {
+	const { name, email, amount, pic } = props;
 	return (
 		<Flex className="w-full" align="center" justify="space-between">
 			<Space>
-				<Avatar size={50} />
+				<Avatar src={pic} size={50} />
 				<div>
 					<Title style={{ marginBottom: 0 }} level={5}>
-						Olivier Martin
+						{name}
 					</Title>
 					<Paragraph style={{ marginBottom: 0 }} className="opacity-60">
-						olivier.martin@gmail.com
+						{email}
 					</Paragraph>
 				</div>
 			</Space>
-			<Title level={4}>+$1,990.00</Title>
+			<Title level={4}>{amount}</Title>
 		</Flex>
 	);
 }
+
+const SaleItemLoading = () => {
+	return (
+		<Flex className="w-full" align="center">
+			<AvatarSkeleton active size="large" />
+			<div className="ml-5">
+				<Skeleton
+					active
+					paragraph={false}
+					style={{ width: '300px', marginBottom: '10px' }}
+				/>
+				<Skeleton active paragraph={false} style={{ width: '250px' }} />
+			</div>
+		</Flex>
+	);
+};
