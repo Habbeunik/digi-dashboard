@@ -1,7 +1,12 @@
 import { Row, Col, Skeleton } from 'antd';
 import SkeletonNode from 'antd/lib/skeleton/Button';
 import SummaryCard from './summaryCard';
-import { UserOutlined } from '@ant-design/icons';
+import {
+	MoneyCollectOutlined,
+	UserSwitchOutlined,
+	StrikethroughOutlined,
+	UserOutlined,
+} from '@ant-design/icons';
 import { IDataSummary } from '@/types';
 
 const iconStyle = { fontSize: '25px', opacity: 0.6 };
@@ -28,7 +33,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.revenueSummary.title}
 						figure={`${data.revenueSummary.amount}`}
-						icon={<UserOutlined style={iconStyle} />}
+						icon={<MoneyCollectOutlined style={iconStyle} />}
 						caption={data.revenueSummary.caption}
 					/>
 				) : (
@@ -41,7 +46,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.subscriptionSummary.title}
 						figure={`${data.subscriptionSummary.amount}`}
-						icon={<UserOutlined style={iconStyle} />}
+						icon={<UserSwitchOutlined style={iconStyle} />}
 						caption={data.subscriptionSummary.caption}
 					/>
 				) : (
@@ -54,7 +59,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.salesSummary.title}
 						figure={`${data.salesSummary.amount}`}
-						icon={<UserOutlined style={iconStyle} />}
+						icon={<StrikethroughOutlined style={iconStyle} />}
 						caption={data.salesSummary.caption}
 					/>
 				) : (
