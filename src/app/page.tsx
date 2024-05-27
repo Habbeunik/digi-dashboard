@@ -11,13 +11,16 @@ import {
 	Col,
 	Card,
 	Spin,
+	Typography,
 } from 'antd';
-import Title from 'antd/lib/typography/Title';
 import Summary from '@/components/summary';
 import OverviewChart from '@/components/chart/overview';
 import RecentSales from '@/components/recentSale';
 import { useEffect, useState } from 'react';
 import { IApiData } from '@/types';
+
+const { RangePicker } = DatePicker;
+const { Title } = Typography;
 
 export default function Home() {
 	const [data, setData] = useState<IApiData | null>(null);
@@ -45,13 +48,10 @@ export default function Home() {
 			<Header />
 			<main className="container mx-auto py-10">
 				<Flex className="mb-8" align="center" justify="space-between">
-					<Title style={{ margin: 0 }} className="m-0">
-						Dashboard
-					</Title>
+					<Title className="noMargin">Dashboard</Title>
 
 					<Space>
-						<DatePicker size="large" width={'200px'} placeholder="Start Date" />
-						<DatePicker size="large" width={'200px'} placeholder="End Date" />
+						<RangePicker size="large" width={'200px'} />
 						<Button type="primary" size="large">
 							Download
 						</Button>

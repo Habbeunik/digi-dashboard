@@ -1,15 +1,17 @@
 'use client';
 
-import { formatMoney } from '@/lib/money';
-import Title from 'antd/lib/typography/Title';
+import { Typography } from 'antd';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { formatMoney } from '@/lib/money';
+
+const { Title } = Typography;
 
 interface IOverViewChartProps {
 	data: { name: string; value: number }[];
 }
 export default function OverviewChart(props: IOverViewChartProps) {
 	return (
-		<div className="h-full" style={{ marginBottom: '-20px' }}>
+		<div className="h-full">
 			<Title level={3}>Overview</Title>
 
 			<ResponsiveContainer className="mt-16" width={'100%'} height={480}>

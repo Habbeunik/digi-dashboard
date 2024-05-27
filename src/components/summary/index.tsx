@@ -1,6 +1,4 @@
 import { Row, Col, Skeleton } from 'antd';
-import SkeletonNode from 'antd/lib/skeleton/Button';
-import SummaryCard from './summaryCard';
 import {
 	MoneyCollectOutlined,
 	UserSwitchOutlined,
@@ -8,11 +6,13 @@ import {
 	UserOutlined,
 } from '@ant-design/icons';
 import { IDataSummary } from '@/types';
+import SummaryCard from './summaryCard';
 
-const iconStyle = { fontSize: '25px', opacity: 0.6 };
+const { Button: SkeletonNode } = Skeleton;
+
 const skeletonProps = {
 	active: true,
-	style: { width: '370px', height: '124px', borderRadius: '8px' },
+	className: 'summaryCardSkeleton',
 };
 
 interface ISummaryProps {
@@ -33,7 +33,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.revenueSummary.title}
 						figure={`${data.revenueSummary.amount}`}
-						icon={<MoneyCollectOutlined style={iconStyle} />}
+						icon={<MoneyCollectOutlined className="summaryCardIcon" />}
 						caption={data.revenueSummary.caption}
 					/>
 				) : (
@@ -46,7 +46,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.subscriptionSummary.title}
 						figure={`${data.subscriptionSummary.amount}`}
-						icon={<UserSwitchOutlined style={iconStyle} />}
+						icon={<UserSwitchOutlined className="summaryCardIcon" />}
 						caption={data.subscriptionSummary.caption}
 					/>
 				) : (
@@ -59,7 +59,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.salesSummary.title}
 						figure={`${data.salesSummary.amount}`}
-						icon={<StrikethroughOutlined style={iconStyle} />}
+						icon={<StrikethroughOutlined className="summaryCardIcon" />}
 						caption={data.salesSummary.caption}
 					/>
 				) : (
@@ -72,7 +72,7 @@ export default function Summary(props: ISummaryProps) {
 					<SummaryCard
 						title={data.activeNowSummary.title}
 						figure={`${data.activeNowSummary.amount}`}
-						icon={<UserOutlined style={iconStyle} />}
+						icon={<UserOutlined className="summaryCardIcon" />}
 						caption={data.activeNowSummary.caption}
 					/>
 				) : (

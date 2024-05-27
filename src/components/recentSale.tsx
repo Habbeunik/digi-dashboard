@@ -1,9 +1,9 @@
-import Title from 'antd/lib/typography/Title';
-import Paragraph from 'antd/lib/typography/Paragraph';
-import { Avatar, Flex, Skeleton, Space } from 'antd';
+import { Avatar, Flex, Skeleton, Space, Typography } from 'antd';
 import { IRecentTransaction } from '@/types';
 import { formatMoney } from '@/lib/money';
-import AvatarSkeleton from 'antd/lib/skeleton/Avatar';
+
+const { Title, Paragraph } = Typography;
+const { Avatar: AvatarSkeleton } = Skeleton;
 
 interface IRecentSalesProps {
 	sales?: IRecentTransaction[];
@@ -59,10 +59,10 @@ function SaleItem(props: ISaleItemProps) {
 			<Space>
 				<Avatar src={pic} size={50} />
 				<div>
-					<Title style={{ marginBottom: 0 }} level={5}>
+					<Title className="noMargin" level={5}>
 						{name}
 					</Title>
-					<Paragraph style={{ marginBottom: 0 }} className="opacity-60">
+					<Paragraph className="opacity-60 className='noMargin'">
 						{email}
 					</Paragraph>
 				</div>
@@ -79,10 +79,10 @@ const SaleItemLoading = () => {
 			<div className="ml-5">
 				<Skeleton
 					active
-					paragraph={false}
-					style={{ width: '300px', marginBottom: '10px' }}
+					title={false}
+					paragraph={{ rows: 2 }}
+					className="saleItemSkeleton"
 				/>
-				<Skeleton active paragraph={false} style={{ width: '250px' }} />
 			</div>
 		</Flex>
 	);

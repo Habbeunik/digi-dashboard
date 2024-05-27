@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.noMargin {
+	margin: 0px !important;
+}
+
+.flex {
+	display: flex !important;
+}
+
+.overViewChartContainer {
+	margin-bottom: -20px;
+}
+
+.navItem {
+	font-size: 16px !important;
+	margin: 0px !important;
+	opacity: 0.7;
+	font-weight: normal !important;
+	cursor: pointer;
+}
+
+.navItem--active {
+	opacity: 1;
+	color: #0000;
+}
+
+.searchInput {
+	width: 300px !important;
+}
+
+.summaryCardIcon {
+	font-size: '25px';
+	opacity: 0.6;
+}
+
+.summaryCardSkeleton {
+	width: 370px !important;
+	height: 124px !important;
+	border-radius: 8px !important;
+}
+
+.saleItemSkeleton {
+	width: 300px !important;
+	margin-bottom: 10px !important;
+}
