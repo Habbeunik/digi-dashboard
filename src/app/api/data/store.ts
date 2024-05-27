@@ -5,7 +5,7 @@ export const recentTransactions: IRecentTransaction[] = [
 		user: {
 			name: 'Abbey Kumapayi',
 			email: 'habbeyunik@gmail.com',
-			pic: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1',
+			pic: 'https://api.dicebear.com/8.x/adventurer-neutral/svg?seed=1',
 		},
 		amount: 2000,
 	},
@@ -13,7 +13,7 @@ export const recentTransactions: IRecentTransaction[] = [
 		user: {
 			name: 'Terry Apala',
 			email: 'terry.apala@gmail.com',
-			pic: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2',
+			pic: 'https://api.dicebear.com/8.x/thumbs/svg?seed=2',
 		},
 		amount: 6500,
 	},
@@ -21,7 +21,7 @@ export const recentTransactions: IRecentTransaction[] = [
 		user: {
 			name: 'Adam Sandler',
 			email: 'adam.sandler@yahoo.com',
-			pic: 'https://api.dicebear.com/7.x/miniavs/svg?seed=3',
+			pic: 'https://api.dicebear.com/8.x/avataaars-neutral/svg?seed=3',
 		},
 		amount: 780,
 	},
@@ -29,7 +29,7 @@ export const recentTransactions: IRecentTransaction[] = [
 		user: {
 			name: 'Jane Bethman',
 			email: 'jane.bethman@gmail.com',
-			pic: 'https://api.dicebear.com/7.x/miniavs/svg?seed=4',
+			pic: 'https://api.dicebear.com/8.x/big-ears-neutral/svg?seed=4',
 		},
 		amount: 50,
 	},
@@ -37,7 +37,7 @@ export const recentTransactions: IRecentTransaction[] = [
 		user: {
 			name: 'Daniel Glover',
 			email: 'danelGlover9303@yahoo.com',
-			pic: 'https://api.dicebear.com/7.x/miniavs/svg?seed=5',
+			pic: 'https://api.dicebear.com/8.x/fun-emoji/svg?seed=5',
 		},
 		amount: 1000,
 	},

@@ -74,7 +74,7 @@ export default function Home() {
 								<Flex
 									align="center"
 									justify="center"
-									className="w-full min-h-64">
+									className="w-full min-h-72">
 									<Spin size="large" />
 								</Flex>
 							)}

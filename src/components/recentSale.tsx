@@ -61,9 +61,7 @@ function SaleItem(props: ISaleItemProps) {
 					<Title className="noMargin" level={5}>
 						{name}
 					</Title>
-					<Paragraph className="opacity-60 className='noMargin'">
-						{email}
-					</Paragraph>
+					<Paragraph className="opacity-60 noMargin">{email}</Paragraph>
 				</div>
 			</Space>
 			<Title level={4}>{amount}</Title>
