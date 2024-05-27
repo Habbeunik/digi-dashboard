@@ -46,8 +46,8 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<main className="container mx-auto py-10">
-				<Flex className="mb-8" align="center" justify="space-between">
+			<main className="container  px-4 mx-auto py-10">
+				<Flex className="mb-6" align="center" justify="space-between">
 					<Title className="noMargin">Dashboard</Title>
 
 					<Space>
@@ -65,8 +65,8 @@ export default function Home() {
 
 				<Summary data={summaryData} />
 
-				<Row gutter={18}>
-					<Col span={14}>
+				<Row gutter={[16, 16]}>
+					<Col span={24} lg={14}>
 						<Card className="h-full">
 							{data ? (
 								<OverviewChart data={data.overViewChartData} />
@@ -81,7 +81,7 @@ export default function Home() {
 						</Card>
 					</Col>
 
-					<Col span={10}>
+					<Col span={24} lg={10}>
 						<Card>
 							<RecentSales sales={data?.recentTransactions} />
 						</Card>

@@ -27,8 +27,8 @@ export default function Summary(props: ISummaryProps) {
 	const { data } = props;
 
 	return (
-		<Row gutter={16} className="my-5">
-			<Col span={6}>
+		<Row gutter={[16, 16]} className="my-5">
+			<Col span={24} md={12} lg={12} xl={6}>
 				{data ? (
 					<SummaryCard
 						title={data.revenueSummary.title}
@@ -41,7 +41,7 @@ export default function Summary(props: ISummaryProps) {
 				)}
 			</Col>
 
-			<Col span={6}>
+			<Col span={24} md={12} lg={12} xl={6}>
 				{data ? (
 					<SummaryCard
 						title={data.subscriptionSummary.title}
@@ -54,7 +54,7 @@ export default function Summary(props: ISummaryProps) {
 				)}
 			</Col>
 
-			<Col span={6}>
+			<Col span={24} md={12} lg={12} xl={6}>
 				{data ? (
 					<SummaryCard
 						title={data.salesSummary.title}
@@ -67,7 +67,7 @@ export default function Summary(props: ISummaryProps) {
 				)}
 			</Col>
 
-			<Col span={6}>
+			<Col span={24} md={12} lg={12} xl={6}>
 				{data ? (
 					<SummaryCard
 						title={data.activeNowSummary.title}

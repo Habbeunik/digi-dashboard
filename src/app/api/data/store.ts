@@ -46,23 +46,23 @@ export const recentTransactions: IRecentTransaction[] = [
 export const dataSummary: { [key: string]: IDataSummary } = {
 	revenue: {
 		title: 'Total Revenue',
-		amount: '$35,0000',
+		amount: '$35,000',
 		caption: '+10% from last month',
 	},
 	sub: {
 		title: 'Subscription',
-		amount: '$1,500',
+		amount: '+$1,500',
 		caption: '+6% from last month',
 	},
 	sales: {
 		title: 'Sales',
-		amount: '345',
+		amount: '+345',
 		caption: '+6% from last month',
 	},
 	activeUsers: {
 		title: 'Active Now',
 		amount: 114,
-		caption: '20 from last hour',
+		caption: '+20 from last hour',
 	},
 };
 

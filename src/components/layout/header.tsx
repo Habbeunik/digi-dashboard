@@ -6,7 +6,7 @@ const { Title } = Typography;
 export default function Header() {
 	return (
 		<div className="py-3 border-b">
-			<Flex justify="space-between" className="container mx-auto">
+			<Flex justify="space-between" className="container mx-auto px-4">
 				<Flex>
 					<Dropdown
 						menu={{
