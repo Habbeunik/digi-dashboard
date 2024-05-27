@@ -65,7 +65,7 @@ export default function Home() {
 
 				<Summary data={summaryData} />
 
-				<Row gutter={16}>
+				<Row gutter={18}>
 					<Col span={14}>
 						<Card className="h-full">
 							{data ? (

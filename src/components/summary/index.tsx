@@ -27,7 +27,7 @@ export default function Summary(props: ISummaryProps) {
 	const { data } = props;
 
 	return (
-		<Row gutter={16} className="my-10">
+		<Row gutter={16} className="my-5">
 			<Col span={6}>
 				{data ? (
 					<SummaryCard

@@ -41,20 +41,12 @@ export const recentTransactions: IRecentTransaction[] = [
 		},
 		amount: 1000,
 	},
-	{
-		user: {
-			name: 'Kelvin Momo',
-			email: 'kelvin.momo@gmail.com',
-			pic: 'https://api.dicebear.com/7.x/miniavs/svg?seed=6',
-		},
-		amount: 200,
-	},
 ];
 
 export const dataSummary: { [key: string]: IDataSummary } = {
 	revenue: {
 		title: 'Total Revenue',
-		amount: '$3,0000',
+		amount: '$35,0000',
 		caption: '+10% from last month',
 	},
 	sub: {

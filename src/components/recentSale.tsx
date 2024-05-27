@@ -38,7 +38,6 @@ export default function RecentSales(props: IRecentSalesProps) {
 						<SaleItemLoading />
 						<SaleItemLoading />
 						<SaleItemLoading />
-						<SaleItemLoading />
 					</>
 				)}
 			</Space>

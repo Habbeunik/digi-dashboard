@@ -14,7 +14,7 @@ export default function OverviewChart(props: IOverViewChartProps) {
 		<div className="h-full">
 			<Title level={3}>Overview</Title>
 
-			<ResponsiveContainer className="mt-16" width={'100%'} height={480}>
+			<ResponsiveContainer className="mt-16" width={'100%'} height={430}>
 				<BarChart className="w-full h-full" data={props.data} barGap={10}>
 					<XAxis dataKey="name" axisLine={false} tickLine={false} />
 					<YAxis
@@ -22,7 +22,7 @@ export default function OverviewChart(props: IOverViewChartProps) {
 						tickLine={false}
 						tickFormatter={(value) => `${formatMoney(value)}`}
 					/>
-					<Bar dataKey="value" fill="black" radius={[8, 8, 0, 0]} />
+					<Bar dataKey="value" fill="black" radius={[5, 5, 0, 0]} />
 				</BarChart>
 			</ResponsiveContainer>
 		</div>
